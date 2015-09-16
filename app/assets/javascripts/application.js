@@ -15,25 +15,5 @@
 //= require turbolinks
 //= require_tree .
 
-// $(document).ready(function(){
-//   $("h1").on("click", function(){
-//    var url = "https://api.traitify.com/v1/assessments"
-//    $.ajax({
-//      // the URL endpoint for the JSON object
-//      url: url,
-//      // type of request
-//      type: "POST",
-//      // datatype xml or json
-//      dataType: "json"
-//    // promise that executes on successful ajax call
-//    }).done(function(){
-//      console.log("ajax request success!")
-//    // promise that executes on unsuccessful ajax call
-//    }).fail(function(){
-//      console.log("ajax request fails!")
-//    // promise that executes either way
-//    }).always(function(){
-//      console.log("this always happens regardless of successful ajax request or not")
-//    })
-//  })
-// })
+$(document).ready(function(){
+})
