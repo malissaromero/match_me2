@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :personalities
   end
 
-  get "/api", to: "controller#get_from_api"
+  get "/api", to: "personalities#get_from_api"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
