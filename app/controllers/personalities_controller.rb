@@ -9,11 +9,14 @@ class PersonalitiesController < ApplicationController
   end
 
   def get_from_api
-    response = HTTParty.post(' https://api.traitify.com/v1/assessments'), {
-    :body => [ { "deck_id" => "core" } ].to_json,
-    :basic_auth => { :username => sql1it9v4lgdb1hgoppslv0mrm },
-    })
-    puts response.body, response.code, response.message, response.headers.inspect
+
+    if !@current_user.assessment_id
+      response = HTTParty.post(' https://api.traitify.com/v1/assessments'), {
+        :body => [ { "deck_id" => "core" } ].to_json,
+        :basic_auth => { :username => sql1it9v4lgdb1hgoppslv0mrm }
+      }
+      puts response.body, response.code, response.message, response.headers.inspect
+    end
   end
 
   private

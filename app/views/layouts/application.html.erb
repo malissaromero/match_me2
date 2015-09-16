@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-  <!-- <script src="https://cdn.traitify.com/js/widgets/v1.js"></script>​ -->
+  <script src="https://cdn.traitify.com/js/widgets/v1.js"></script>​
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
@@ -17,6 +17,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if current_user %>
+  <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
+<% else %>
+  <h3><%= link_to 'Signup', new_user_registration_path %></h3>
+  <h3><%= link_to 'Login', new_user_session_path %></h3>
+<% end %>
+
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,7 +42,7 @@
       <ul class="nav navbar-nav">
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="#">Profile</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
