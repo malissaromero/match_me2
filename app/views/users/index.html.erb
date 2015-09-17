@@ -9,25 +9,55 @@
 
     <!-- Items -->
     <div class="carousel-inner">
+      <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://localhost:3000/users">Match Me</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://localhost:3000/users/:id">Profile</a></li>
+            <% if current_user %>
+              <li><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to 'Signup', new_user_registration_path %></li>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
         <div class="item active">
             <%= image_tag "photo3.jpg" %>
-            <div class="carousel-caption">
+            <div class="first-carousel-caption">
               <h1>Match Me</h1>
-              <h3>Find the Personality of Your Match</h3>
+              <h3>Find The Personality Of Your Match</h3>
+              <a class="btn btn-default btn-lg btn-block" href="#" role="button">Find Your Personality</a>
             </div>
         </div>
         <div class="item">
             <%= image_tag "photo1.jpg" %>
             <div class="carousel-caption">
-              <h3>John and Julia</h3>
-              <p>July 31 2015</p>
+              <h1>John and Julia</h1>
+              <h3>July 31 2015</h3>
             </div>
         </div>
         <div class="item">
             <%= image_tag "photo4.jpg" %>
             <div class="carousel-caption">
-              <h3>Matt and Kristin</h3>
-              <p>August 3 2015</p>
+              <h1>Matt and Kristin</h1>
+              <h3>August 3 2015</h3>
             </div>
         </div>
     </div>
@@ -38,4 +68,3 @@
         <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
 </div>
-<a class="btn btn-default btn-lg btn-block" href="#" role="button">Find Your Personality</a>

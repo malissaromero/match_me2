@@ -15,8 +15,8 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function(){
-  $(".carousel").click(function(){
-     alert( "Handler for .click() called." );
-  })
-})
+// $(document).ready(function(){
+//   $(".carousel").click(function(){
+//      alert( "Handler for .click() called." );
+//   })
+// })

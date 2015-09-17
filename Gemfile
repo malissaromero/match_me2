@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'omniauth-facebook'
+
+gem 'omniauth'
+
 gem 'devise'
 
 gem 'httparty', '~> 0.13.5'
