@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-  <script src="https://cdn.traitify.com/js/widgets/v1.js"></script>​
+  <!-- <script src="https://cdn.traitify.com/js/widgets/v1.js"></script>​ -->
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
@@ -17,13 +17,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if current_user %>
-  <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
-<% else %>
-  <h3><%= link_to 'Signup', new_user_registration_path %></h3>
-  <h3><%= link_to 'Login', new_user_session_path %></h3>
-<% end %>
-
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,7 +27,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Match Me</a>
+      <a class="navbar-brand" href="http://localhost:3000/users">Match Me</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,8 +35,14 @@
       <ul class="nav navbar-nav">
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Profile</a></li>
-        <li class="dropdown">
+        <li><a href="http://localhost:3000/users/:id">Profile</a></li>
+        <% if current_user %>
+          <li><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></li>
+        <% else %>
+          <li><%= link_to 'Signup', new_user_registration_path %></li>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+        <% end %>
+        <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
@@ -52,7 +51,7 @@
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
