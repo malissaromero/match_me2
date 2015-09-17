@@ -4,12 +4,3 @@
   <p>About Me</p>
   <p><%= @user.description %></p>
 </div>
-
-t.integer :traits_score
-t.integer :types_score
-t.references :user, index: true, foreign_key: true
-
-t.string :assessment_id
-t.string :name
-t.string :photo_url
-t.string :description
