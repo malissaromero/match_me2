@@ -16,7 +16,7 @@ class PersonalitiesController < ApplicationController
 
     if !current_user.assessment_id
       response = HTTParty.post('https://api.traitify.com/v1/assessments', {
-        :body => { "deck_id" => "super-hero" },
+        :body => { "deck_id" => "core" }.to_json,
         :basic_auth => {username: "sql1it9v4lgdb1hgoppslv0mrm", password: "x"}
       })
       puts response
