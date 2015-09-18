@@ -22,16 +22,16 @@ class PersonalitiesController < ApplicationController
     end
   end
 
-  def results_from_api
-    if !current_user.assessment_id
-      response = HTTParty.get('https://api.traitify.com/v1/assessments/{assessment_id}',{
-      :data => {"blend", "traits", "types"},
-      :image_pack => {"linear"},
-      :basic_auth => {username: "sql1it9v4lgdb1hgoppslv0mrm", password: "x"}
-    })
-      puts response
-    end
-  end
+  # def results_from_api
+  #   if !current_user.assessment_id
+  #     response = HTTParty.get('https://api.traitify.com/v1/assessments/{assessment_id}',{
+  #     :data => {"blend", "traits", "types"},
+  #     :image_pack => {"linear"},
+  #     :basic_auth => {username: "sql1it9v4lgdb1hgoppslv0mrm", password: "x"}
+  #   })
+  #     puts response
+  #   end
+  # end
 
   private
   def personality_params

@@ -14,11 +14,6 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
   end
 
-  def get_from_api
-    response = HTTParty.get('')
-    puts response.body, response.code, response.message, response.headers.inspect
-  end
-
   private
   def user_params
     params.require(:user).permit(:name, :photo_url)
