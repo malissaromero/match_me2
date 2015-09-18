@@ -1,9 +1,8 @@
-<img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/138.jpg" alt="" class="img-rounded">
 <div>
   <p>
-    <%= image_tag(current_user.largeimage)%>
+    <%= @user.photo_url%>
   </p>
-  <p><%= @user.email %></p>
+  <p><%= @user.name %></p>
   <p>About Me</p>
   <p><%= @user.description %></p>
 </div>
