@@ -18,7 +18,9 @@ class PersonalitiesController < ApplicationController
         :body => { "deck_id" => "core" }.to_json,
         :basic_auth => {username: "sql1it9v4lgdb1hgoppslv0mrm", password: "x"}
       })
-      puts response
+      puts "traitify post: #{response}"
+      current_user.assessment_id = response["id"]
+      current_user.save
     end
   end
 

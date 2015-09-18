@@ -1,8 +1,9 @@
 <div class="assessment"></div>​
+
 <script>
   Traitify.setPublicKey("vb5317e0pcurjt9hn382bbe8it");
   Traitify.setHost("https://api-sandbox.traitify.com");
   Traitify.setVersion("v1");
-  var assessmentId = 'current_user.assessment_id';
+  var assessmentId = "<%= current_user.assessment_id %>";
   Traitify.ui.load(assessmentId, ".assessment")
 </script>​
